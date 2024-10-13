@@ -49,8 +49,39 @@ for first 50units Rs.0.50/unit
 for next 100units Rs.0.75/unit
 for next 100units Rs.1.20/unit
 for above 250units Rs.1.50/unit
+#include <stdio.h>
+int main() 
+{
+    int units;
+    float bill;
+    printf("enter the value if units:");
+    scanf("%d",&units);
+    if(units<=50)
+    {
+        bill=units*50;
+    }
+    else if(units<=150)
+    {
+        bill=50*0.50+(units-50)*0.75;
+    }
+    else if(units<=250)
+    {
+        bill=50*0.50+100*0.75+(units-150)*1.20;
+    }
+    else
+    
+        bill=50*0.50+100*0.75+100*1.20+(units-250)*1.50;
+    }
+    printf("total bill %f",bill);
+    return 0;
+}
+output:
+1)enter the value if units:250
+total bill 220.000000
+2)enter the value if units:300
+total bill 295.000000
 
-
+4)write a c-program to find the largest among the four given numbers using nested if..else
 
 
 
