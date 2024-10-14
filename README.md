@@ -191,7 +191,27 @@ output:
 8)write a c-program to enter a decimal number and calculate and display the binary equivalent of that number
 
 9)writa a c-program to find the roots of a quadratic equation
+#include <stdio.h>
+int main() {
+    int num, originalNum, remainder, result = 0;
+    printf("Enter a three-digit integer: ");
+    scanf("%d", &num);
+    originalNum = num;
 
+    while (originalNum != 0) {
+      
+        remainder = originalNum % 10;
+       result += remainder * remainder * remainder;
+       originalNum /= 10;
+    }
+
+    if (result == num)
+        printf("%d is an Armstrong number.", num);
+    else
+        printf("%d is not an Armstrong number.", num);
+
+    return 0;
+}
 10)write c-program to whether the given number is armstrong number or not
 
 
