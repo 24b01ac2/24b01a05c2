@@ -189,92 +189,50 @@ output:
 7)write a c-program that displays all the numbers from x and y,that are divisible by a and b.(x,y,a,b should be read from keyboard).
 
 8)write a c-program to enter a decimal number and calculate and display the binary equivalent of that number
-It looks like you uploaded a screenshot of a C program. Based on the visible portion of the image, the code provided converts a decimal number to binary using a while loop and displays the binary equivalent. Here's a clean version of the code:
-
 #include <stdio.h>
-
-int main() {
-    int decimal_num, binary_num = 0, i = 1, remainder;
-
-    // Input decimal number
-    printf("Enter a decimal number: ");
-    scanf("%d", &decimal_num);
-
-    // Convert decimal to binary using a while loop
-    while (decimal_num != 0) {
-        remainder = decimal_num % 2;  // Get remainder (binary digit)
-        decimal_num /= 2;             // Divide the number by 2
-        binary_num += remainder * i;  // Build binary number
-        i *= 10;                      // Move to the next binary digit position
+int main()
+{
+    int dn, bn = 0, i = 1, remainder;
+    printf("Enter a dn: ");
+    scanf("%d", &dn);
+    while (dn != 0) {
+        remainder = dn % 2;  
+        dn=dn/= 2;    
+        bn=bn+ (remainder * i);  
+        i=i*10;               
     }
-
-    // Print the binary number
     printf("Binary number: %d\n", binary_num);
-
-    return 0;
-}
-
-Explanation:
-
-This program reads a decimal number from the user.
-
-It uses a while loop to repeatedly divide the decimal number by 2, collecting remainders, which represent the binary digits.
-
-The binary digits are constructed in reverse by multiplying the remainder by powers of 10.
-
-
-Example:
-
-Input:
-
-Enter a decimal number: 5
-
+ return 0;
+ }
 Output:
-
+Enter a dn:5
 Binary number: 101
 
-Let me know if you need further clarification!
-
-
 9)writa a c-program to find the roots of a quadratic equation
-Here is a C program to find the roots of a quadratic equation of the form:
-
-
-
-The roots of a quadratic equation can be calculated using the quadratic formula:
-
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-
-C Program:
-
 #include <stdio.h>
 #include <math.h>
-
-int main() {
+int main()
+{
     float a, b, c, discriminant, root1, root2, realPart, imaginaryPart;
-
-    // Input coefficients a, b and c
     printf("Enter coefficients a, b and c: ");
-    scanf("%f %f %f", &a, &b, &c);
-
-    // Calculate discriminant
+    scanf("%f,%f,%f",&a,&b,&c);
     discriminant = b * b - 4 * a * c;
-
-    // Check the nature of the discriminant and find roots accordingly
-    if (discriminant > 0) {
-        // Two distinct real roots
+    if (discriminant > 0)
+    {
         root1 = (-b + sqrt(discriminant)) / (2 * a);
         root2 = (-b - sqrt(discriminant)) / (2 * a);
         printf("Roots are real and different.\n");
         printf("Root 1 = %.2f\n", root1);
         printf("Root 2 = %.2f\n", root2);
-    } else if (discriminant == 0) {
-        // One real root (repeated)
+    } 
+    else if (discriminant == 0)
+    {
+        
         root1 = -b / (2 * a);
         printf("Roots are real and the same.\n");
         printf("Root = %.2f\n", root1);
-    } else {
-        // Complex (imaginary) roots
+    } else 
+    {
         realPart = -b / (2 * a);
         imaginaryPart = sqrt(-discriminant) / (2 * a);
         printf("Roots are complex and different.\n");
@@ -284,46 +242,14 @@ int main() {
 
     return 0;
 }
-
-Explanation:
-
-1. The program takes coefficients a, b, and c as input from the user.
-
-
-2. It calculates the discriminant (b² - 4ac) to determine the nature of the roots:
-
-If the discriminant is positive, the equation has two distinct real roots.
-
-If the discriminant is zero, the equation has one repeated real root.
-
-If the discriminant is negative, the equation has two complex roots.
-
-
-
-3. The roots are then calculated and displayed accordingly.
-
-
-
-Example:
-
-Input:
-
-Enter coefficients a, b and c: 1 -3 2
-
 Output:
-
+Enter coefficients a,b and c:1,-3,2
 Roots are real and different.
 Root 1 = 2.00
 Root 2 = 1.00
-
 For Complex Roots:
-
-Input:
-
-Enter coefficients a, b and c: 1 2 5
-
 Output:
-
+Enter coefficients a,b and c:1,2,5
 Roots are complex and different.
 Root 1 = -1.00 + 2.00i
 Root 2 = -1.00 - 2.00i
@@ -332,17 +258,15 @@ Root 2 = -1.00 - 2.00i
 #include <stdio.h>
 int main() {
     int num, originalNum, remainder, result = 0;
-    printf("Enter a three-digit integer: ");
+    printf("Enter a integer: ");
     scanf("%d", &num);
     originalNum = num;
-
-    while (originalNum != 0) {
-      
+    while (originalNum != 0)
+    { 
         remainder = originalNum % 10;
-       result += remainder * remainder * remainder;
+       result=result+( remainder * remainder * remainder);
        originalNum /= 10;
     }
-
     if (result == num)
         printf("%d is an Armstrong number.", num);
     else
@@ -350,7 +274,9 @@ int main() {
 
     return 0;
 }
-
+output:
+Enter a integer:24
+24 is not an Armstrong number.
 
 
 
