@@ -187,59 +187,24 @@ output:
 9 is not a perfect number
 
 7)write a c-program that displays all the numbers from x and y,that are divisible by a and b.(x,y,a,b should be read from keyboard).
-Here is a C program that displays all the numbers between x and y (inclusive) that are divisible by both a and b:
-
 #include <stdio.h>
-
-int main() {
-    int x, y, a, b;
-    
-    // Input x, y, a, and b
-    printf("Enter the value of x: ");
-    scanf("%d", &x);
-    
-    printf("Enter the value of y: ");
-    scanf("%d", &y);
-    
-    printf("Enter the value of a: ");
-    scanf("%d", &a);
-    
-    printf("Enter the value of b: ");
-    scanf("%d", &b);
-    
+int main() 
+{
+    int i,x, y, a, b;
+    printf("Enter the value of x,y,a,b: ");
+    scanf("%d,%d,%d,%d", &x,&y,&a,&b);
     printf("Numbers divisible by both %d and %d between %d and %d:\n", a, b, x, y);
-    
-    for (int i = x; i <= y; i++) {
-        if (i % a == 0 && i % b == 0) {
+    for (i = x; i <= y; i++) {
+        if (i % a == 0 && i % b == 0)
+        {
             printf("%d ", i);
         }
-    }
-    
+    }  
     printf("\n");
-    
     return 0;
-}
-
-Explanation:
-
-The program asks the user for input values for x, y, a, and b.
-
-Then, it loops from x to y and checks if each number is divisible by both a and b using the modulus operator (%).
-
-If a number satisfies both conditions, it is printed.
-
-
-Example:
-
-For input:
-
-x = 1
-y = 50
-a = 3
-b = 5
-
-The output will be:
-
+    }
+output:
+enter the values of x,y,a,b:1,50,3,5
 Numbers divisible by both 3 and 5 between 1 and 50:
 15 30 45
 
