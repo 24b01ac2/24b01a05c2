@@ -12,7 +12,7 @@
 }
 output: 
    enter the value f:60
-15.555555
+   15.555555
 
 2)write a c-program to verify whether or not a given number is palidrome
 #include <stdio.h>
